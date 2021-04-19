@@ -10,7 +10,9 @@ File15=fa-solid-900.woff
 File16=fa-solid-900.woff2
 File17=fontawesome.css
 File18=register_bg_2.png
+File19=sarah-dayan.jpg
 File2=fa-brands-400.eot
+File20=tailwind.min.css
 File3=fa-brands-400.svg
 File4=fa-brands-400.ttf
 File5=fa-brands-400.woff
@@ -28,7 +30,9 @@ FileGroup15=Default Group
 FileGroup16=Default Group
 FileGroup17=Default Group
 FileGroup18=Default Group
+FileGroup19=Default Group
 FileGroup2=Default Group
+FileGroup20=Default Group
 FileGroup3=Default Group
 FileGroup4=Default Group
 FileGroup5=Default Group
@@ -41,11 +45,18 @@ Library1=jcore
 Library2=jfx
 Library3=jxui
 Library4=banano
-Module1=pgIndex
-Module2=TWElement
-NumberOfFiles=18
+Module1=pgAlert
+Module2=pgButtons
+Module3=pgButtons1
+Module4=pgColor
+Module5=pgIndex
+Module6=pgSarah
+Module7=pgSizing
+Module8=pgTypography
+Module9=TWElement
+NumberOfFiles=20
 NumberOfLibraries=4
-NumberOfModules=2
+NumberOfModules=9
 Version=8.9
 @EndOfDesignText@
 #Region Project Attributes 
@@ -91,12 +102,11 @@ Sub AppStart (Form1 As Form, Args() As String)
 	BANano.TranspilerOptions.UseServiceWorker = False
 	BANano.TranspilerOptions.MinifyOnline = False
 	BANano.TranspilerOptions.RemoveDeadCode = False
-	
-	
-	'BANano.Header.AddCSSFile("tailwind.min.css")
+		
+	'BANano.Header.AddCSSFile("compiled-tailwind.min.css")
+	BANano.Header.AddCSSFile("tailwind.min.css")
 	BANano.Header.AddCSSFile("fontawesome.css")
-	BANano.Header.AddCSSFile("compiled-tailwind.min.css")
-	
+
 	'BANano.TranspilerOptions.SetFireReadyWhenReadyStateComplete
 	'BANano.TranspilerOptions.GZipGeneratedWebsite(10)
 	'add google map
@@ -138,4 +148,11 @@ End Sub
 Sub BANano_Ready
 	'initialize the vuetify app
 	pgIndex.Initialize
+	pgAlert.Initialize 
+	pgSarah.Initialize 
+	pgSizing.Initialize 
+	pgColor.Initialize 
+	pgTypography.Initialize
+	pgButtons.Initialize 
+	'pgButtons1.Initialize 
 End Sub
